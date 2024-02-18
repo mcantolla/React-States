@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.socialWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.formularioWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+}

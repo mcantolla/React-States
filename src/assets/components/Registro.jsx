@@ -4,7 +4,7 @@ import Formulario from './Formulario'
 function Registro() {
     return (
     <>
-
+        <div className='socialWrapper'>
         <SocialButton
         rrss= "fa-brands fa-github"
         />
@@ -14,7 +14,10 @@ function Registro() {
         <SocialButton
         rrss= "fa-brands fa-linkedin-in"
         />
+        </div>
+        <div className='formularioWrapper'>
         <Formulario />
+        </div>
     </>
     )
   }

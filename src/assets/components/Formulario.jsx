@@ -10,6 +10,7 @@ function Formulario() {
     const [contraseñaConfirm, setContraseñaConfirm] = useState("")
     const [alerta, setAlerta] = useState(false)
     const [mensajeAlerta, setMensajeAlerta] = useState("Rellena todos los campos")
+    const [colorAlerta, setColorAlerta] = useState("danger")
 
     const changeName = (event) => {
         setNombre(event.target.value)
@@ -28,17 +29,28 @@ function Formulario() {
         event.preventDefault()
         if (nombre == "" || email == "" || contraseña == "" || contraseñaConfirm == "") {
             setMensajeAlerta("Rellena todos los campos")
+            setColorAlerta("danger")
             setAlerta(true)
+            setNombre("")
+            setEmail("")
+            setContraseña("")
+            setContraseñaConfirm("")
             return
         }
         
         if (contraseña !== contraseñaConfirm) {
             setMensajeAlerta("Las contraseñas deben ser iguales")
+            setColorAlerta("danger")
             setAlerta(true)
+            setNombre("")
+            setEmail("")
+            setContraseña("")
+            setContraseñaConfirm("")
             return
         } 
         else {
             setMensajeAlerta("Registrado con exito")
+            setColorAlerta("success")
             setAlerta(true)
             setNombre("")
             setEmail("")
@@ -85,9 +97,9 @@ function Formulario() {
       <Button variant="success" type="submit">Registrarse</Button>{' '}
     </Form>
     {alerta && (
-        <Alerta color="danger"
-                mensaje={mensajeAlerta}
-        >
+        <Alerta 
+          color={colorAlerta}
+          mensaje={mensajeAlerta}>
         </Alerta>
       )}
     </>
